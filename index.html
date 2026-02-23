@@ -134,6 +134,20 @@ select{padding:7px 12px;border-radius:10px;border:1px solid var(--border);font-s
 .search-wrap .clear-btn:hover{color:var(--t1);background:#F3F4F6}
 .search-wrap.has-val .clear-btn{display:block}
 .cadence-tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:600;background:#F3F4F6;color:var(--t3);margin-bottom:8px}
+.slide-preview{margin-bottom:24px}
+.slide-preview .label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--t4);margin-bottom:10px}
+.slide-thumb{width:100%;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:#F9FAFB;position:relative;cursor:pointer;transition:.2s}
+.slide-thumb:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.slide-thumb .placeholder{padding:48px 24px;text-align:center;color:var(--t4)}
+.slide-thumb .placeholder .icon{font-size:40px;margin-bottom:8px;opacity:.3}
+.slide-thumb .placeholder p{font-size:12px}
+.slide-thumb .overlay{position:absolute;inset:0;background:rgba(15,26,46,.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:.2s}
+.slide-thumb:hover .overlay{opacity:1}
+.slide-thumb .overlay span{color:#FFF;font-weight:600;font-size:13px;background:var(--teal);padding:8px 18px;border-radius:8px}
+.chips-collapse{display:flex;flex-wrap:wrap;gap:3px;align-items:center}
+.chips-collapse.is-collapsed .metric-chip:nth-child(n+5){display:none}
+.chips-toggle{font-size:11px;font-weight:600;color:var(--teal);cursor:pointer;padding:3px 10px;border-radius:6px;background:var(--teal-bg);border:1px solid var(--teal-b);transition:.15s;white-space:nowrap}
+.chips-toggle:hover{background:var(--teal);color:#FFF}
 .fade-in{animation:fadeIn .25s ease}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 </style>
@@ -226,11 +240,28 @@ function renderMetricsList(){
   if(selectedIdx!==null)renderDetail();
 }
 
+function toggleChips(btn){var w=btn.parentElement;if(w.classList.contains("is-collapsed")){w.classList.remove("is-collapsed");btn.textContent="Show less";}else{w.classList.add("is-collapsed");btn.textContent="+"+((w.querySelectorAll(".metric-chip").length)-4)+" more";}}
+
 function renderDetail(){
   const m=METRICS[selectedIdx];if(!m)return;
   const panel=document.getElementById("detailPanel");
   const sc=statusColors[m.status]||{bg:"#F3F4F6",fg:"#374151"};
   const statusDot=sc.fg;
+
+  let slideHtml="";
+  if(m.slideLink){
+    slideHtml=`<div class="slide-preview">
+      <div class="label">Visual Representation</div>
+      <div class="slide-thumb" onclick="window.open('${esc(m.slideLink)}','_blank')">
+        <div class="placeholder">
+          <div class="icon">📊</div>
+          <p style="font-size:13px;font-weight:600;color:var(--t2);margin-bottom:4px">${esc(m.name)}</p>
+          <p>Click to open in ${esc(m.usedIn[0]?.type||"dashboard")}</p>
+        </div>
+        <div class="overlay"><span>Open Dashboard →</span></div>
+      </div>
+    </div>`;
+  }
 
   panel.innerHTML=`<div class="fade-in">
     <div class="detail-head">
@@ -248,6 +279,8 @@ function renderDetail(){
       <div class="info-card"><div class="label">Owner</div><div class="value">${esc(m.owner)}</div></div>
       <div class="info-card"><div class="label">Team</div><div class="value">${esc(m.ownerPrefix)}</div></div>
     </div>
+
+    ${slideHtml}
 
     ${m.tables.length?`<div class="sec"><div class="sec-title">Source Tables</div><div>${m.tables.map(t=>`<span class="table-chip">${esc(t)}</span>`).join("")}</div></div>`:""}
 
@@ -328,7 +361,7 @@ function renderCalContent(){
           ${p.link?`<a href="${esc(p.link)}" target="_blank" style="margin-left:auto;color:var(--teal);font-weight:600;font-size:11px;text-decoration:none">Open →</a>`:""}
         </div>
         ${tbls.length?`<details style="margin-bottom:8px"><summary style="font-size:11px;color:var(--t3);font-weight:600;cursor:pointer">Source tables (${tbls.length})</summary><div style="display:flex;gap:3px;flex-wrap:wrap;margin-top:4px">${tbls.map(t=>`<span class="src-chip">${esc(t.split(".").pop())}</span>`).join("")}</div></details>`:""}
-        <div style="display:flex;flex-wrap:wrap;gap:3px">${(p.metrics||[]).map(mn=>`<span class="metric-chip teal" onclick="goToMetric('${esc(mn).replace(/'/g,"\\'")}');event.stopPropagation()">${esc(mn)}</span>`).join("")}</div>
+        <div class="chips-collapse${(p.metrics||[]).length>4?' is-collapsed':''}">${(p.metrics||[]).map(mn=>`<span class="metric-chip teal" onclick="goToMetric('${esc(mn).replace(/'/g,"\\'")}');event.stopPropagation()">${esc(mn)}</span>`).join("")}${(p.metrics||[]).length>4?`<span class="chips-toggle" onclick="toggleChips(this);event.stopPropagation()">+${(p.metrics||[]).length-4} more</span>`:""}</div>
       </div>`;
     });
     h+=`</div>`;
@@ -368,7 +401,7 @@ function renderCalContent(){
           <span class="next-delivery">Next → ${nx}</span>
         </div>`:`<div style="margin-bottom:10px"><span class="cadence-tag">${esc(p.notes||p.freq)}</span></div>`}
         ${tbls.length?`<details style="margin-bottom:8px"><summary style="font-size:11px;color:var(--t3);font-weight:600;cursor:pointer">Source tables (${tbls.length})</summary><div style="display:flex;gap:3px;flex-wrap:wrap;margin-top:4px">${tbls.map(t=>`<span class="src-chip">${esc(t.split(".").pop())}</span>`).join("")}</div></details>`:""}
-        <div style="display:flex;flex-wrap:wrap;gap:3px">${(p.metrics||[]).map(mn=>`<span class="metric-chip gold" onclick="goToMetric('${esc(mn).replace(/'/g,"\\'")}');event.stopPropagation()">${esc(mn)}</span>`).join("")}</div>
+        <div class="chips-collapse${(p.metrics||[]).length>4?' is-collapsed':''}">${(p.metrics||[]).map(mn=>`<span class="metric-chip gold" onclick="goToMetric('${esc(mn).replace(/'/g,"\\'")}');event.stopPropagation()">${esc(mn)}</span>`).join("")}${(p.metrics||[]).length>4?`<span class="chips-toggle" onclick="toggleChips(this);event.stopPropagation()">+${(p.metrics||[]).length-4} more</span>`:""}</div>
       </div>`;
     });
     h+=`</div></div>`;
