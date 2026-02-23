@@ -3,37 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Executive Mockup · People Metrics</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<title>Analyst Mockup · People Metrics</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--navy:#0F1A2E;--navy-l:#1A2744;--teal:#0D7377;--teal-bg:#EEF7F7;--teal-b:#C8E6E6;--gold:#D4A017;--gold-bg:#FEF3C7;--gold-b:#FDE68A;--sand:#FAF8F5;--bg:#FAFAFA;--border:#E5E5E5;--t1:#0F1A2E;--t2:#374151;--t3:#6B7280;--t4:#A3A3A3;--white:#FFF;--green-bg:#DCFCE7;--green-fg:#166534;--amber-bg:#FEF3C7;--amber-fg:#92400E;--blue-bg:#DBEAFE;--blue-fg:#1E40AF;--red-bg:#FEE2E2;--red-fg:#991B1B}
+:root{--navy:#0F1A2E;--navy-l:#1A2744;--teal:#0D7377;--teal-bg:#EEF7F7;--teal-b:#C8E6E6;--gold:#D4A017;--gold-bg:#FEF3C7;--gold-b:#FDE68A;--bg:#FAFAFA;--border:#E5E5E5;--t1:#0F1A2E;--t2:#374151;--t3:#6B7280;--t4:#A3A3A3;--white:#FFF;--green-bg:#DCFCE7;--green-fg:#166534;--amber-bg:#FEF3C7;--amber-fg:#92400E;--blue-bg:#DBEAFE;--blue-fg:#1E40AF;--red-bg:#FEE2E2;--red-fg:#991B1B;--mono:'DM Mono',monospace}
 body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--t2);line-height:1.6;overflow:hidden;height:100vh}
 .shell{display:flex;height:100vh}
-
-/* SIDEBAR */
 .sidebar{width:220px;background:var(--navy);display:flex;flex-direction:column;flex-shrink:0}
 .sidebar-brand{padding:24px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
 .sidebar-brand h1{font-family:'Fraunces',Georgia,serif;font-size:17px;color:#FFF;font-weight:600}
-.sidebar-brand p{font-size:9px;color:var(--gold);text-transform:uppercase;letter-spacing:2px;margin-top:3px;font-weight:600}
+.sidebar-brand p{font-size:9px;color:var(--teal);text-transform:uppercase;letter-spacing:2px;margin-top:3px;font-weight:600}
 .nav{padding:12px 0;flex:1}
 .nav-item{display:flex;align-items:center;gap:10px;padding:12px 20px;font-size:13px;font-weight:500;color:#737373;cursor:pointer;border-left:3px solid transparent;transition:.15s}
 .nav-item:hover{color:#CCC;background:rgba(255,255,255,.03)}
-.nav-item.active{color:#FFF;background:var(--navy-l);border-left-color:var(--gold)}
+.nav-item.active{color:#FFF;background:var(--navy-l);border-left-color:var(--teal)}
 .nav-icon{font-size:15px;width:20px;text-align:center}
 .nav-ct{margin-left:auto;font-size:10px;background:rgba(255,255,255,.1);padding:2px 8px;border-radius:10px;font-weight:700}
 .sidebar-foot{padding:16px 20px;font-size:10px;color:#525252;border-top:1px solid rgba(255,255,255,.08);line-height:1.5}
-
-/* MAIN */
 .main{flex:1;display:flex;flex-direction:column;overflow:hidden}
-.filter-bar{background:var(--white);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;gap:12px;flex-shrink:0}
+.filter-bar{background:var(--white);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;gap:12px;flex-shrink:0;flex-wrap:wrap}
 .search-wrap{flex:1;max-width:300px;position:relative}
 .search-wrap input{width:100%;padding:8px 14px 8px 36px;border-radius:10px;border:1px solid var(--border);font-size:13px;font-family:inherit;background:var(--bg);outline:none;transition:.2s}
 .search-wrap input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(13,115,119,.1)}
 .search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:15px;color:var(--t4)}
 select{padding:7px 12px;border-radius:10px;border:1px solid var(--border);font-size:12px;font-family:inherit;background:var(--white);color:var(--t2);cursor:pointer;outline:none}
-
-/* TWO PANEL */
 .two-panel{flex:1;display:flex;overflow:hidden}
 .metric-list{width:340px;border-right:1px solid var(--border);overflow-y:auto;background:var(--white);flex-shrink:0}
 .list-header{padding:12px 18px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--t4);background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:2}
@@ -41,59 +35,61 @@ select{padding:7px 12px;border-radius:10px;border:1px solid var(--border);font-s
 .list-item:hover{background:#FAFAFA}
 .list-item.active{background:var(--teal-bg);border-right-color:var(--teal)}
 .list-item h3{font-size:14px;font-weight:600;color:var(--t1);margin-bottom:2px}
+.list-item .mid{font-size:11px;font-weight:700;color:var(--teal);margin-bottom:2px}
 .list-item p{font-size:11px;color:var(--t4)}
-.list-item .domain-tag{font-size:10px;font-weight:600;color:var(--teal);margin-top:4px;display:inline-block}
-
-/* DETAIL PANEL */
+.list-item .badges-row{display:flex;gap:4px;margin-top:5px}
 .detail-panel{flex:1;overflow-y:auto;padding:28px 32px}
 .detail-empty{display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;color:var(--t4);gap:8px}
-.detail-empty .icon{font-size:32px;opacity:.3}
-.detail-empty p{font-size:13px}
-
-/* BADGES */
 .badge{display:inline-block;padding:3px 10px;border-radius:5px;font-size:10px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;white-space:nowrap}
+.badge-sm{padding:2px 7px;font-size:9px}
 .badge-exec{background:var(--gold-bg);color:var(--amber-fg)}
-.badge-domain{background:#F3F4F6;color:var(--t2)}
+.badge-team{background:#F3F4F6;color:var(--t2)}
 .badge-active{background:var(--green-bg);color:var(--green-fg)}
+.badge-proposed{background:var(--amber-bg);color:var(--amber-fg)}
+.badge-approved{background:var(--blue-bg);color:var(--blue-fg)}
+.badge-new{background:#E0E7FF;color:#3730A3}
+.badge-deprecated{background:var(--red-bg);color:var(--red-fg)}
+.badge-domain{background:#F3F4F6;color:var(--t2)}
 
-/* METRIC DETAIL */
-.detail-head{margin-bottom:28px}
+/* DETAIL SECTIONS */
+.detail-head{margin-bottom:24px}
+.detail-head .mid{font-size:12px;font-weight:700;color:var(--teal);font-family:var(--mono);margin-bottom:4px}
 .detail-head h2{font-family:'Fraunces',Georgia,serif;font-size:24px;font-weight:600;color:var(--t1);margin-bottom:8px}
-.detail-head .badges{display:flex;gap:6px;margin-top:8px}
-
-.def-block{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:24px;font-size:14px;line-height:1.7;color:var(--t1)}
+.detail-head .badges{display:flex;gap:6px;margin-top:6px}
+.def-block{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:20px;font-size:14px;line-height:1.7;color:var(--t1)}
 .def-block .label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--t4);margin-bottom:8px}
 
-.owner-block{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--bg);border-radius:10px;margin-bottom:24px}
-.owner-avatar{width:36px;height:36px;border-radius:50%;background:var(--teal);color:#FFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
-.owner-info .name{font-weight:600;font-size:14px;color:var(--t1)}
-.owner-info .role{font-size:11px;color:var(--t3)}
+/* CALC BLOCK */
+.calc-block{background:var(--navy);border-radius:10px;padding:14px 18px;margin-bottom:20px;font-family:var(--mono);font-size:13px;color:#A5F3FC;line-height:1.5}
+.calc-block .label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#737373;margin-bottom:6px;font-family:'DM Sans',sans-serif}
 
-/* SLIDE THUMBNAIL */
-.slide-preview{margin-bottom:24px}
-.slide-preview .label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--t4);margin-bottom:10px}
-.slide-thumb{width:100%;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:#F9FAFB;position:relative;cursor:pointer;transition:.2s}
-.slide-thumb:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
-.slide-thumb img{width:100%;display:block}
-.slide-thumb .placeholder{padding:48px 24px;text-align:center;color:var(--t4)}
-.slide-thumb .placeholder .icon{font-size:40px;margin-bottom:8px;opacity:.3}
-.slide-thumb .placeholder p{font-size:12px}
-.slide-thumb .overlay{position:absolute;inset:0;background:rgba(15,26,46,.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:.2s}
-.slide-thumb:hover .overlay{opacity:1}
-.slide-thumb .overlay span{color:#FFF;font-weight:600;font-size:13px;background:var(--teal);padding:8px 18px;border-radius:8px}
+/* INFO GRID */
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.info-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 14px}
+.info-card .label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--t4);margin-bottom:4px}
+.info-card .value{font-size:13px;font-weight:600;color:var(--t1)}
 
 /* SECTIONS */
-.sec{margin-bottom:24px}
+.sec{margin-bottom:20px}
 .sec-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--t4);margin-bottom:10px}
+.table-chip{display:inline-block;padding:4px 10px;border-radius:6px;font-size:11px;font-weight:500;background:#F9FAFB;border:1px solid var(--border);color:var(--t2);margin:2px;font-family:var(--mono)}
 .related-chip{display:inline-block;padding:5px 12px;border-radius:8px;font-size:12px;font-weight:500;background:var(--teal-bg);color:var(--teal);border:1px solid var(--teal-b);cursor:pointer;margin:2px;transition:.15s}
 .related-chip:hover{background:var(--teal);color:#FFF}
+.sql-block{background:#F9FAFB;border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-family:var(--mono);font-size:12px}
+.sql-block a{color:var(--teal);text-decoration:none;font-weight:600}
 
 /* USED IN */
-.used-in-card{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:var(--white);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;transition:.15s}
+.used-in-card{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:var(--white);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;transition:.15s;cursor:pointer}
 .used-in-card:hover{border-color:var(--teal);box-shadow:0 2px 8px rgba(0,0,0,.04)}
 .used-in-card .name{font-weight:600;font-size:13px;color:var(--t1)}
 .used-in-card .meta{font-size:11px;color:var(--t3);margin-top:2px}
-.used-in-card .type-badge{font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px}
+
+/* STATUS HISTORY */
+.status-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #F5F5F5}
+.status-item:last-child{border-bottom:none}
+.status-dot{width:8px;height:8px;border-radius:50%;margin-top:5px;flex-shrink:0}
+.status-item .text{font-size:12px;color:var(--t2)}
+.status-item .date{font-size:11px;color:var(--t4)}
 
 /* CALENDAR */
 .calendar-scroll{flex:1;overflow-y:auto;padding:28px}
@@ -117,18 +113,37 @@ select{padding:7px 12px;border-radius:10px;border:1px solid var(--border);font-s
 .metric-chip{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:500;margin:2px;cursor:pointer;transition:.12s}
 .metric-chip.teal{background:var(--teal-bg);color:var(--teal);border:1px solid var(--teal-b)}
 .metric-chip.gold{background:var(--gold-bg);color:var(--amber-fg);border:1px solid var(--gold-b)}
+.src-chip{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-family:var(--mono);background:#F9FAFB;border:1px solid var(--border);margin:1px}
 .freq-group{margin-bottom:28px}
 .freq-header{display:flex;align-items:center;gap:8px;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--border)}
 .freq-header .icon{font-size:18px;color:var(--gold)}
 .freq-header h3{font-size:15px;font-weight:600;color:var(--t1)}
 .freq-header span:last-child{font-size:11px;color:var(--t4)}
 
-/* FADE */
+/* TABLES PAGE */
+.table-page{padding:28px}
+.table-registry-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:18px 22px;margin-bottom:12px}
+.table-registry-card h4{font-family:var(--mono);font-size:14px;color:var(--teal);margin-bottom:6px}
+.table-registry-card .desc{font-size:13px;color:var(--t2);margin-bottom:10px}
+.table-registry-card .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.table-registry-card .mini{font-size:11px}
+.table-registry-card .mini .label{font-weight:700;color:var(--t4);text-transform:uppercase;font-size:9px;letter-spacing:.5px}
+
 
 .search-wrap .clear-btn{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--t4);cursor:pointer;background:none;border:none;padding:2px 4px;border-radius:4px;display:none;font-family:inherit}
 .search-wrap .clear-btn:hover{color:var(--t1);background:#F3F4F6}
 .search-wrap.has-val .clear-btn{display:block}
 .cadence-tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:600;background:#F3F4F6;color:var(--t3);margin-bottom:8px}
+.slide-preview{margin-bottom:24px}
+.slide-preview .label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--t4);margin-bottom:10px}
+.slide-thumb{width:100%;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:#F9FAFB;position:relative;cursor:pointer;transition:.2s}
+.slide-thumb:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.slide-thumb .placeholder{padding:48px 24px;text-align:center;color:var(--t4)}
+.slide-thumb .placeholder .icon{font-size:40px;margin-bottom:8px;opacity:.3}
+.slide-thumb .placeholder p{font-size:12px}
+.slide-thumb .overlay{position:absolute;inset:0;background:rgba(15,26,46,.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:.2s}
+.slide-thumb:hover .overlay{opacity:1}
+.slide-thumb .overlay span{color:#FFF;font-weight:600;font-size:13px;background:var(--teal);padding:8px 18px;border-radius:8px}
 .context-card{background:#FFFBEB;border:1px solid #FDE68A;border-radius:10px;padding:16px 18px;margin-bottom:16px;position:relative;overflow:hidden}
 .context-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:#D97706;border-radius:4px 0 0 4px}
 .context-header{display:flex;align-items:center;gap:8px;margin-bottom:10px}
@@ -158,7 +173,7 @@ select{padding:7px 12px;border-radius:10px;border:1px solid var(--border);font-s
 <aside class="sidebar">
   <div class="sidebar-brand">
     <h1>People Metrics</h1>
-    <p>Executive View</p>
+    <p>Analyst Reference</p>
   </div>
   <nav class="nav" id="nav"></nav>
   <div class="sidebar-foot">Generated from Google Sheets<br>Last updated Feb 2026</div>
@@ -167,53 +182,56 @@ select{padding:7px 12px;border-radius:10px;border:1px solid var(--border);font-s
 </div>
 
 <script>
-// ══════════════════════════════════════════════
-// MOCKUP DATA — Executive version
-// ══════════════════════════════════════════════
-const SITE_DATA = {"METRICS":[{"name":"Total Headcount","domain":"Workforce Planning","owner":"Sarah Chen","ownerPrefix":"PSA","def":"Total active employees (FTE + PTE) on payroll. Excludes contractors, interns, unpaid leave >90d.","related":["Voluntary Attrition Rate","Span of Control"],"slideLink":"https://tableau.company.com/views/board-people","desc":"Foundational headcount metric used across all workforce calculations.","tier":"Executive","usedIn":[{"name":"Board People Dashboard","type":"Tableau","team":"PSA","desc":"Monthly board-level view of workforce health. Covers headcount trends, attrition rates, engagement scores, and diversity metrics."},{"name":"Manager Self-Service","type":"Looker","team":"HRBPs","desc":"Self-service people data for 200+ people managers."},{"name":"HRBP Dashboard","type":"Looker","team":"HRBPs","desc":"HC, attrition, and org structure for business partners."},{"name":"CHRO Monthly Report","type":"PowerPoint","team":"PSA","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership."},{"name":"QBR People Section","type":"PowerPoint","team":"PSA","desc":"Quarterly business review people section for C-suite and BU heads."},{"name":"Finance HC Package","type":"Excel","team":"Finance","desc":"Monthly headcount and cost data for FP&A and Controller."}]},{"name":"Voluntary Attrition Rate","domain":"Talent Retention","owner":"Sarah Chen","ownerPrefix":"PSA","def":"% voluntary separations / avg HC, annualized. Includes resignations and voluntary early retirements.","related":["Total Attrition Rate","90-Day New Hire Retention","Involuntary Attrition Rate"],"slideLink":"","desc":"Key retention indicator tracking voluntary departures.","tier":"Executive","usedIn":[{"name":"Board People Dashboard","type":"Tableau","team":"PSA","desc":"Monthly board-level view of workforce health. Covers headcount trends, attrition rates, engagement scores, and diversity metrics."},{"name":"Retention Deep Dive","type":"Tableau","team":"PSA","desc":"Interactive analysis of attrition drivers, trends, and cohort retention rates."},{"name":"Manager Self-Service","type":"Looker","team":"HRBPs","desc":"Self-service people data for 200+ people managers."},{"name":"HRBP Dashboard","type":"Looker","team":"HRBPs","desc":"HC, attrition, and org structure for business partners."},{"name":"CHRO Monthly Report","type":"PowerPoint","team":"PSA","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership."},{"name":"QBR People Section","type":"PowerPoint","team":"PSA","desc":"Quarterly business review people section for C-suite and BU heads."}]},{"name":"Involuntary Attrition Rate","domain":"Talent Retention","owner":"Sarah Chen","ownerPrefix":"PSA","def":"% involuntary separations / avg HC, annualized.","related":["Voluntary Attrition Rate","Total Attrition Rate"],"slideLink":"","desc":"Tracks RIFs, terminations, and other involuntary exits.","tier":"Executive","usedIn":[{"name":"Retention Deep Dive","type":"Tableau","team":"PSA","desc":"Interactive analysis of attrition drivers, trends, and cohort retention rates."},{"name":"CHRO Monthly Report","type":"PowerPoint","team":"PSA","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership."}]},{"name":"Total Attrition Rate","domain":"Talent Retention","owner":"Sarah Chen","ownerPrefix":"PSA","def":"Combined vol+invol rate, annualized.","related":["Voluntary Attrition Rate","Involuntary Attrition Rate"],"slideLink":"","desc":"Overall workforce departure rate.","tier":"Executive","usedIn":[{"name":"Board People Dashboard","type":"Tableau","team":"PSA","desc":"Monthly board-level view of workforce health. Covers headcount trends, attrition rates, engagement scores, and diversity metrics."},{"name":"Retention Deep Dive","type":"Tableau","team":"PSA","desc":"Interactive analysis of attrition drivers, trends, and cohort retention rates."},{"name":"HRBP Dashboard","type":"Looker","team":"HRBPs","desc":"HC, attrition, and org structure for business partners."},{"name":"CHRO Monthly Report","type":"PowerPoint","team":"PSA","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership."},{"name":"QBR People Section","type":"PowerPoint","team":"PSA","desc":"Quarterly business review people section for C-suite and BU heads."}]},{"name":"Time to Fill","domain":"Talent Acquisition","owner":"James Kim","ownerPrefix":"TAA","def":"Avg calendar days from req approval to offer acceptance.","related":["Cost Per Hire","90-Day New Hire Retention","Offer Acceptance Rate"],"slideLink":"https://tableau.company.com/views/ta-ops","desc":"Measures full recruitment lifecycle efficiency.","tier":"Executive","usedIn":[{"name":"TA Operations Dashboard","type":"Tableau","team":"TA Analytics","desc":"Real-time recruiting pipeline and performance metrics for the TA team."},{"name":"Recruiter Scorecard","type":"Looker","team":"TA Analytics","desc":"Individual recruiter performance metrics and pipeline health."},{"name":"CHRO Monthly Report","type":"PowerPoint","team":"PSA","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership."},{"name":"Executive TA Review","type":"PowerPoint","team":"TA Analytics","desc":"Monthly talent acquisition performance review for CHRO, VP TA, and Hiring Committee."}]},{"name":"Cost Per Hire","domain":"Talent Acquisition","owner":"James Kim","ownerPrefix":"TAA","def":"Total costs / hires. SHRM/ANSI standard.","related":["Time to Fill","Offer Acceptance Rate"],"slideLink":"https://tableau.company.com/views/ta-ops","desc":"Comprehensive cost efficiency metric for recruiting.","tier":"Executive","usedIn":[{"name":"TA Operations Dashboard","type":"Tableau","team":"TA Analytics","desc":"Real-time recruiting pipeline and performance metrics for the TA team."},{"name":"CHRO Monthly Report","type":"PowerPoint","team":"PSA","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership."},{"name":"Executive TA Review","type":"PowerPoint","team":"TA Analytics","desc":"Monthly talent acquisition performance review for CHRO, VP TA, and Hiring Committee."},{"name":"QBR People Section","type":"PowerPoint","team":"PSA","desc":"Quarterly business review people section for C-suite and BU heads."},{"name":"Finance HC Package","type":"Excel","team":"Finance","desc":"Monthly headcount and cost data for FP&A and Controller."}]},{"name":"Employee Net Promoter Score (eNPS)","domain":"Employee Engagement","owner":"Priya Sharma","ownerPrefix":"ENG","def":"Promoters% minus Detractors%. Measured via quarterly pulse surveys.","related":["Survey Response Rate"],"slideLink":"","desc":"Core employee engagement metric.","tier":"Executive","usedIn":[{"name":"Board People Dashboard","type":"Tableau","team":"PSA","desc":"Monthly board-level view of workforce health. Covers headcount trends, attrition rates, engagement scores, and diversity metrics."},{"name":"CHRO Monthly Report","type":"PowerPoint","team":"PSA","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership."},{"name":"QBR People Section","type":"PowerPoint","team":"PSA","desc":"Quarterly business review people section for C-suite and BU heads."}]},{"name":"Span of Control","domain":"Organizational Design","owner":"Sarah Chen","ownerPrefix":"PSA","def":"Avg direct reports per manager.","related":["Total Headcount","Manager to IC Ratio"],"slideLink":"","desc":"Organizational structure efficiency metric.","tier":"Executive","usedIn":[{"name":"Manager Self-Service","type":"Looker","team":"HRBPs","desc":"Self-service people data for 200+ people managers."},{"name":"HRBP Dashboard","type":"Looker","team":"HRBPs","desc":"HC, attrition, and org structure for business partners."}]},{"name":"Manager to IC Ratio","domain":"Organizational Design","owner":"Sarah Chen","ownerPrefix":"PSA","def":"Ratio managers to ICs (1:N).","related":["Span of Control","Total Headcount"],"slideLink":"","desc":"Tracks management overhead.","tier":"Executive","usedIn":[]},{"name":"90-Day New Hire Retention","domain":"Talent Acquisition","owner":"James Kim","ownerPrefix":"TAA","def":"% new hires still employed at 90d.","related":["Voluntary Attrition Rate","Time to Fill","Cost Per Hire"],"slideLink":"","desc":"Quality of hire signal.","tier":"Executive","usedIn":[{"name":"Retention Deep Dive","type":"Tableau","team":"PSA","desc":"Interactive analysis of attrition drivers, trends, and cohort retention rates."},{"name":"Executive TA Review","type":"PowerPoint","team":"TA Analytics","desc":"Monthly talent acquisition performance review for CHRO, VP TA, and Hiring Committee."}]},{"name":"Compensation Ratio (Compa-Ratio)","domain":"Total Rewards","owner":"David Rodriguez","ownerPrefix":"TR","def":"Base / band midpoint.","related":["Gender Pay Equity Ratio","Diversity Representation"],"slideLink":"","desc":"Pay positioning relative to market.","tier":"Executive","usedIn":[{"name":"CHRO Monthly Report","type":"PowerPoint","team":"PSA","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership."},{"name":"Compensation Equity","type":"Tableau","team":"Total Rewards","desc":"Pay positioning and equity analysis for the Compensation team."}]},{"name":"Gender Pay Equity Ratio","domain":"DEI","owner":"Amara Okafor","ownerPrefix":"DEI","def":"Median comp ratio W/M by level+function.","related":["Compensation Ratio (Compa-Ratio)","Diversity Representation"],"slideLink":"https://tableau.company.com/views/board-dei","desc":"Tracks progress toward pay parity.","tier":"Executive","usedIn":[{"name":"Board People Dashboard","type":"Tableau","team":"PSA","desc":"Monthly board-level view of workforce health. Covers headcount trends, attrition rates, engagement scores, and diversity metrics."},{"name":"Board DEI Dashboard","type":"Tableau","team":"DEI","desc":"Quarterly DEI dashboard for Board and DEI Committee. Tracks representation, pay equity, and promotion rates."},{"name":"CHRO Monthly Report","type":"PowerPoint","team":"PSA","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership."},{"name":"QBR People Section","type":"PowerPoint","team":"PSA","desc":"Quarterly business review people section for C-suite and BU heads."},{"name":"Compensation Equity","type":"Tableau","team":"Total Rewards","desc":"Pay positioning and equity analysis for the Compensation team."},{"name":"Annual DEI Report","type":"PDF","team":"DEI","desc":"Public-facing annual report on DEI progress for all employees and external stakeholders."}]},{"name":"Diversity Representation","domain":"DEI","owner":"Amara Okafor","ownerPrefix":"DEI","def":"% URM by level tier.","related":["Gender Pay Equity Ratio"],"slideLink":"https://tableau.company.com/views/board-dei","desc":"Core diversity metric by organizational level.","tier":"Executive","usedIn":[{"name":"Board People Dashboard","type":"Tableau","team":"PSA","desc":"Monthly board-level view of workforce health. Covers headcount trends, attrition rates, engagement scores, and diversity metrics."},{"name":"Board DEI Dashboard","type":"Tableau","team":"DEI","desc":"Quarterly DEI dashboard for Board and DEI Committee. Tracks representation, pay equity, and promotion rates."},{"name":"CHRO Monthly Report","type":"PowerPoint","team":"PSA","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership."},{"name":"QBR People Section","type":"PowerPoint","team":"PSA","desc":"Quarterly business review people section for C-suite and BU heads."},{"name":"DEI Scorecard","type":"Looker","team":"DEI","desc":"Quarterly DEI scorecard for DEI team, HRBPs, and HR Leadership."},{"name":"Annual DEI Report","type":"PDF","team":"DEI","desc":"Public-facing annual report on DEI progress for all employees and external stakeholders."}]},{"name":"Internal Mobility Rate","domain":"Career Development","owner":"Sarah Chen","ownerPrefix":"PSA","def":"% positions filled internally.","related":["Time to Fill","Promotion Rate"],"slideLink":"","desc":"Internal talent pipeline health indicator.","tier":"Executive","usedIn":[{"name":"Executive TA Review","type":"PowerPoint","team":"TA Analytics","desc":"Monthly talent acquisition performance review for CHRO, VP TA, and Hiring Committee."},{"name":"DEI Scorecard","type":"Looker","team":"DEI","desc":"Quarterly DEI scorecard for DEI team, HRBPs, and HR Leadership."},{"name":"Annual DEI Report","type":"PDF","team":"DEI","desc":"Public-facing annual report on DEI progress for all employees and external stakeholders."}]},{"name":"Promotion Rate","domain":"Career Development","owner":"Sarah Chen","ownerPrefix":"PSA","def":"% promoted (level increase), annualized.","related":["Internal Mobility Rate","Diversity Representation"],"slideLink":"","desc":"Career progression rate.","tier":"Executive","usedIn":[{"name":"Board DEI Dashboard","type":"Tableau","team":"DEI","desc":"Quarterly DEI dashboard for Board and DEI Committee. Tracks representation, pay equity, and promotion rates."},{"name":"DEI Scorecard","type":"Looker","team":"DEI","desc":"Quarterly DEI scorecard for DEI team, HRBPs, and HR Leadership."},{"name":"Annual DEI Report","type":"PDF","team":"DEI","desc":"Public-facing annual report on DEI progress for all employees and external stakeholders."}]}],"PRODUCTS":[{"id":"PRD-001","name":"Board People Dashboard","type":"Tableau","desc":"Monthly board-level view of workforce health. Covers headcount trends, attrition rates, engagement scores, and diversity metrics.","freq":"Monthly","months":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"audience":"Board, CHRO","tier":"Executive","metrics":["Total Headcount","Voluntary Attrition Rate","Total Attrition Rate","Employee Net Promoter Score (eNPS)","Gender Pay Equity Ratio","Diversity Representation"],"link":"https://tableau.company.com/views/board-people","poc":"Sarah Chen","team":"PSA","severity":"High","status":"Active","notes":"3rd business day","tables":[]},{"id":"PRD-002","name":"Board DEI Dashboard","type":"Tableau","desc":"Quarterly DEI dashboard for Board and DEI Committee. Tracks representation, pay equity, and promotion rates.","freq":"Quarterly","months":["Mar","Jun","Sep","Dec"],"audience":"Board, CHRO, DEI Committee","tier":"Executive","metrics":["Gender Pay Equity Ratio","Diversity Representation","Promotion Rate"],"link":"https://tableau.company.com/views/board-dei","poc":"Amara Okafor","team":"DEI","severity":"High","status":"Active","notes":"Q+10 business days","tables":[]},{"id":"PRD-008","name":"CHRO Monthly Report","type":"PowerPoint","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership.","freq":"Monthly","months":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"audience":"CHRO, VP HR, HR Leadership","tier":"Executive","metrics":["Total Headcount","Voluntary Attrition Rate","Involuntary Attrition Rate","Total Attrition Rate","Time to Fill","Cost Per Hire","Employee Net Promoter Score (eNPS)","Compensation Ratio (Compa-Ratio)","Gender Pay Equity Ratio","Diversity Representation"],"link":"","poc":"Sarah Chen","team":"PSA","severity":"High","status":"Active","notes":"5th business day","tables":[]},{"id":"PRD-009","name":"Executive TA Review","type":"PowerPoint","desc":"Monthly talent acquisition performance review for CHRO, VP TA, and Hiring Committee.","freq":"Monthly","months":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"audience":"CHRO, VP TA, Hiring Committee","tier":"Executive","metrics":["Time to Fill","Time to Start","Cost Per Hire","Offer Acceptance Rate","90-Day New Hire Retention","Internal Mobility Rate"],"link":"","poc":"James Kim","team":"TA Analytics","severity":"High","status":"Active","notes":"7th business day","tables":[]},{"id":"PRD-010","name":"QBR People Section","type":"PowerPoint","desc":"Quarterly business review people section for C-suite and BU heads.","freq":"Quarterly","months":["Jan","Apr","Jul","Oct"],"audience":"CEO, CFO, CHRO, BU Heads","tier":"Executive","metrics":["Total Headcount","Voluntary Attrition Rate","Total Attrition Rate","Cost Per Hire","Employee Net Promoter Score (eNPS)","Gender Pay Equity Ratio","Diversity Representation"],"link":"","poc":"Sarah Chen","team":"PSA","severity":"High","status":"Active","notes":"Q+15 business days","tables":[]},{"id":"PRD-013","name":"Annual DEI Report","type":"PDF","desc":"Public-facing annual report on DEI progress for all employees and external stakeholders.","freq":"Annually","months":["Mar"],"audience":"All Employees (public)","tier":"Executive","metrics":["Gender Pay Equity Ratio","Diversity Representation","Internal Mobility Rate","Promotion Rate"],"link":"","poc":"Amara Okafor","team":"DEI","severity":"High","status":"Active","notes":"March 15","tables":[]}]};
+const SITE_DATA = {"METRICS":[{"id":"PSA-001","name":"Total Headcount","domain":"Workforce Planning","owner":"Sarah Chen","ownerPrefix":"PSA","status":"Active","tier":"Executive","def":"Total active employees (FTE + PTE) on payroll. Excludes contractors, interns, unpaid leave >90d.","calc":"COUNT active employees WHERE status=Active","grain":"Employee, point-in-time","related":["Voluntary Attrition Rate","Span of Control"],"slideLink":"https://tableau.company.com/views/board-people","desc":"Foundational headcount metric used across all workforce calculations.","notes":"","contextText":"FTE: Full-time equivalent (≥30 hrs/wk); PTE: Part-time (<30 hrs/wk, counted as fraction); Active: Not on unpaid leave >90 days; Point-in-time: Snapshot as of last day of reporting period","contextLink":"","tables":["HR.CORE.DIM_EMPLOYEES"],"sql":"https://github.com/your-org/metrics-sql/blob/main/sql/PSA-001_total_headcount.sql","sqlVer":"v2","changes":[],"usedIn":[{"name":"Board People Dashboard","type":"Tableau","poc":"Sarah Chen","desc":"Monthly board-level view of workforce health. Covers headcount trends, attrition rates, engagement scores, and diversity metrics."},{"name":"Manager Self-Service","type":"Looker","poc":"Raj Patel","desc":"Self-service people data for 200+ people managers."},{"name":"HRBP Dashboard","type":"Looker","poc":"Raj Patel","desc":"HC, attrition, and org structure for business partners."},{"name":"CHRO Monthly Report","type":"PowerPoint","poc":"Sarah Chen","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership."},{"name":"QBR People Section","type":"PowerPoint","poc":"Sarah Chen","desc":"Quarterly business review people section for C-suite and BU heads."},{"name":"Finance HC Package","type":"Excel","poc":"Sarah Chen","desc":"Monthly headcount and cost data for FP&A and Controller."}]},{"id":"PSA-002","name":"Voluntary Attrition Rate","domain":"Talent Retention","owner":"Sarah Chen","ownerPrefix":"PSA","status":"Change Approved","tier":"Executive","def":"% voluntary separations / avg HC, annualized. Includes resignations and voluntary early retirements.","calc":"(Vol sep / Avg HC) × (12/mo) × 100","grain":"Employee, monthly","related":["Total Attrition Rate","90-Day New Hire Retention","Involuntary Attrition Rate"],"slideLink":"","desc":"Key retention indicator tracking voluntary departures.","notes":"Proposed: include retirement as voluntary per SHRM","contextText":"High Impact: VP+ or critical-role designation per annual Talent Review; Regrettable: Top-performer (rating ≥4) or hard-to-replace per manager flag at exit; Target: <12% annualized per Board-approved FY25 workforce plan; Exclusions: Contractors, interns, unpaid leave >90d excluded","contextLink":"https://docs.google.com/presentation/d/example/edit#slide=id.attrition-framework","tables":["HR.CORE.DIM_EMPLOYEES","HR.CORE.FACT_SEPARATIONS","HR.CORE.FACT_DAILY_HEADCOUNT"],"sql":"https://github.com/your-org/metrics-sql/blob/main/sql/PSA-002_voluntary_attrition.sql","sqlVer":"v3","changes":[],"usedIn":[{"name":"Board People Dashboard","type":"Tableau","poc":"Sarah Chen","desc":"Monthly board-level view of workforce health. Covers headcount trends, attrition rates, engagement scores, and diversity metrics."},{"name":"Retention Deep Dive","type":"Tableau","poc":"Sarah Chen","desc":"Interactive analysis of attrition drivers, trends, and cohort retention rates."},{"name":"Manager Self-Service","type":"Looker","poc":"Raj Patel","desc":"Self-service people data for 200+ people managers."},{"name":"HRBP Dashboard","type":"Looker","poc":"Raj Patel","desc":"HC, attrition, and org structure for business partners."},{"name":"CHRO Monthly Report","type":"PowerPoint","poc":"Sarah Chen","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership."},{"name":"QBR People Section","type":"PowerPoint","poc":"Sarah Chen","desc":"Quarterly business review people section for C-suite and BU heads."}]},{"id":"PSA-003","name":"Involuntary Attrition Rate","domain":"Talent Retention","owner":"Sarah Chen","ownerPrefix":"PSA","status":"Active","tier":"Executive","def":"% involuntary separations / avg HC, annualized.","calc":"(Invol sep / Avg HC) × (12/mo) × 100","grain":"Employee, monthly","related":["Voluntary Attrition Rate","Total Attrition Rate"],"slideLink":"","desc":"Tracks RIFs, terminations, and other involuntary exits.","notes":"","contextText":"","contextLink":"","tables":[],"sql":"","sqlVer":"","changes":[],"usedIn":[{"name":"Retention Deep Dive","type":"Tableau","poc":"Sarah Chen","desc":"Interactive analysis of attrition drivers, trends, and cohort retention rates."},{"name":"CHRO Monthly Report","type":"PowerPoint","poc":"Sarah Chen","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership."}]},{"id":"PSA-004","name":"Total Attrition Rate","domain":"Talent Retention","owner":"Sarah Chen","ownerPrefix":"PSA","status":"Active","tier":"Executive","def":"Combined vol+invol rate, annualized.","calc":"(All sep / Avg HC) × (12/mo) × 100","grain":"Employee, monthly","related":["Voluntary Attrition Rate","Involuntary Attrition Rate"],"slideLink":"","desc":"Overall workforce departure rate.","notes":"","contextText":"","contextLink":"","tables":[],"sql":"","sqlVer":"","changes":[],"usedIn":[{"name":"Board People Dashboard","type":"Tableau","poc":"Sarah Chen","desc":"Monthly board-level view of workforce health. Covers headcount trends, attrition rates, engagement scores, and diversity metrics."},{"name":"Retention Deep Dive","type":"Tableau","poc":"Sarah Chen","desc":"Interactive analysis of attrition drivers, trends, and cohort retention rates."},{"name":"HRBP Dashboard","type":"Looker","poc":"Raj Patel","desc":"HC, attrition, and org structure for business partners."},{"name":"CHRO Monthly Report","type":"PowerPoint","poc":"Sarah Chen","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership."},{"name":"QBR People Section","type":"PowerPoint","poc":"Sarah Chen","desc":"Quarterly business review people section for C-suite and BU heads."}]},{"id":"TAA-001","name":"Time to Fill","domain":"Talent Acquisition","owner":"James Kim","ownerPrefix":"TAA","status":"Active","tier":"Executive","def":"Avg calendar days from req approval to offer acceptance.","calc":"AVG(offer_date - approval_date) WHERE req_status=Filled","grain":"Requisition, period","related":["Cost Per Hire","90-Day New Hire Retention","Offer Acceptance Rate"],"slideLink":"https://tableau.company.com/views/ta-ops","desc":"Measures full recruitment lifecycle efficiency.","notes":"","contextText":"Clock starts: Date req approved in Workday; Clock stops: Date candidate accepts offer; Excludes: Internal transfers, contractor conversions, executive search; Target: ≤45d IC, ≤60d manager+, ≤90d VP+","contextLink":"","tables":["HR.TA.FACT_REQUISITIONS"],"sql":"https://github.com/your-org/metrics-sql/blob/main/sql/TAA-001_time_to_fill.sql","sqlVer":"v2","changes":[],"usedIn":[{"name":"TA Operations Dashboard","type":"Tableau","poc":"James Kim","desc":"Real-time recruiting pipeline and performance metrics for the TA team."},{"name":"Recruiter Scorecard","type":"Looker","poc":"James Kim","desc":"Individual recruiter performance metrics and pipeline health."},{"name":"CHRO Monthly Report","type":"PowerPoint","poc":"Sarah Chen","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership."},{"name":"Executive TA Review","type":"PowerPoint","poc":"James Kim","desc":"Monthly talent acquisition performance review for CHRO, VP TA, and Hiring Committee."}]},{"id":"TAA-002","name":"Time to Start","domain":"Talent Acquisition","owner":"James Kim","ownerPrefix":"TAA","status":"Active","tier":"Team","def":"Avg calendar days from req approval to start date.","calc":"AVG(start_date - approval_date)","grain":"Requisition, period","related":["Time to Fill","Cost Per Hire"],"slideLink":"","desc":"Extended TTF including onboarding lead time.","notes":"","contextText":"","contextLink":"","tables":[],"sql":"","sqlVer":"","changes":[],"usedIn":[{"name":"TA Operations Dashboard","type":"Tableau","poc":"James Kim","desc":"Real-time recruiting pipeline and performance metrics for the TA team."},{"name":"Executive TA Review","type":"PowerPoint","poc":"James Kim","desc":"Monthly talent acquisition performance review for CHRO, VP TA, and Hiring Committee."}]},{"id":"TAA-003","name":"Cost Per Hire","domain":"Talent Acquisition","owner":"James Kim","ownerPrefix":"TAA","status":"Change Proposed","tier":"Executive","def":"Total costs / hires. SHRM/ANSI standard.","calc":"(Internal + External costs) / Hires","grain":"Hire, period","related":["Time to Fill","Offer Acceptance Rate"],"slideLink":"https://tableau.company.com/views/ta-ops","desc":"Comprehensive cost efficiency metric for recruiting.","notes":"Proposed: add relocation costs","contextText":"Internal costs: Recruiter salary allocation, hiring manager time, interview panel hours; External costs: Agency fees, job boards, referral bonuses, background checks; SHRM/ANSI standard (2012): Total costs / total hires; Proposed: Add relocation costs per comp committee","contextLink":"https://docs.google.com/presentation/d/example/edit#slide=id.cph-methodology","tables":["HR.TA.FACT_REQUISITIONS","HR.TA.FACT_RECRUITING_COSTS"],"sql":"https://github.com/your-org/metrics-sql/blob/main/sql/TAA-003_cost_per_hire.sql","sqlVer":"v1","changes":[],"usedIn":[{"name":"TA Operations Dashboard","type":"Tableau","poc":"James Kim","desc":"Real-time recruiting pipeline and performance metrics for the TA team."},{"name":"CHRO Monthly Report","type":"PowerPoint","poc":"Sarah Chen","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership."},{"name":"Executive TA Review","type":"PowerPoint","poc":"James Kim","desc":"Monthly talent acquisition performance review for CHRO, VP TA, and Hiring Committee."},{"name":"QBR People Section","type":"PowerPoint","poc":"Sarah Chen","desc":"Quarterly business review people section for C-suite and BU heads."},{"name":"Finance HC Package","type":"Excel","poc":"Sarah Chen","desc":"Monthly headcount and cost data for FP&A and Controller."}]},{"id":"TAA-004","name":"Offer Acceptance Rate","domain":"Talent Acquisition","owner":"James Kim","ownerPrefix":"TAA","status":"Active","tier":"Team","def":"% formal offers accepted.","calc":"(Accepted / Offers) × 100","grain":"Offer, period","related":["Time to Fill","Cost Per Hire"],"slideLink":"","desc":"Offer competitiveness indicator.","notes":"","contextText":"","contextLink":"","tables":[],"sql":"","sqlVer":"","changes":[],"usedIn":[{"name":"TA Operations Dashboard","type":"Tableau","poc":"James Kim","desc":"Real-time recruiting pipeline and performance metrics for the TA team."},{"name":"Recruiter Scorecard","type":"Looker","poc":"James Kim","desc":"Individual recruiter performance metrics and pipeline health."},{"name":"Executive TA Review","type":"PowerPoint","poc":"James Kim","desc":"Monthly talent acquisition performance review for CHRO, VP TA, and Hiring Committee."}]},{"id":"ENG-001","name":"Employee Net Promoter Score (eNPS)","domain":"Employee Engagement","owner":"Priya Sharma","ownerPrefix":"ENG","status":"Active","tier":"Executive","def":"Promoters% minus Detractors%. Measured via quarterly pulse surveys.","calc":"Promoters% - Detractors%","grain":"Employee, survey cycle","related":["Survey Response Rate"],"slideLink":"","desc":"Core employee engagement metric.","notes":"","contextText":"Promoters: Score 9-10; Passives: 7-8; Detractors: 0-6; Benchmark: Tech industry median +20, our target +30; Measured via quarterly Qualtrics pulse; Min 70% response rate required for BU-level validity","contextLink":"","tables":["HR.ENGAGEMENT.FACT_SURVEY"],"sql":"https://github.com/your-org/metrics-sql/blob/main/sql/ENG-001_enps.sql","sqlVer":"v1","changes":[],"usedIn":[{"name":"Board People Dashboard","type":"Tableau","poc":"Sarah Chen","desc":"Monthly board-level view of workforce health. Covers headcount trends, attrition rates, engagement scores, and diversity metrics."},{"name":"CHRO Monthly Report","type":"PowerPoint","poc":"Sarah Chen","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership."},{"name":"QBR People Section","type":"PowerPoint","poc":"Sarah Chen","desc":"Quarterly business review people section for C-suite and BU heads."}]},{"id":"PSA-005","name":"Span of Control","domain":"Organizational Design","owner":"Sarah Chen","ownerPrefix":"PSA","status":"Active","tier":"Executive","def":"Avg direct reports per manager.","calc":"COUNT(reports) / COUNT(managers)","grain":"Manager, point-in-time","related":["Total Headcount","Manager to IC Ratio"],"slideLink":"","desc":"Organizational structure efficiency metric.","notes":"","contextText":"Optimal: 5-8 direct reports per manager; Under-span: <4 flags delayering opportunity; Over-span: >10 flags capacity risk; Excludes: Dotted-line, shared services, matrixed relationships","contextLink":"","tables":[],"sql":"","sqlVer":"","changes":[],"usedIn":[{"name":"Manager Self-Service","type":"Looker","poc":"Raj Patel","desc":"Self-service people data for 200+ people managers."},{"name":"HRBP Dashboard","type":"Looker","poc":"Raj Patel","desc":"HC, attrition, and org structure for business partners."}]},{"id":"PSA-006","name":"Manager to IC Ratio","domain":"Organizational Design","owner":"Sarah Chen","ownerPrefix":"PSA","status":"Active","tier":"Executive","def":"Ratio managers to ICs (1:N).","calc":"COUNT(ICs) / COUNT(managers)","grain":"Org, point-in-time","related":["Span of Control","Total Headcount"],"slideLink":"","desc":"Tracks management overhead.","notes":"","contextText":"","contextLink":"","tables":[],"sql":"","sqlVer":"","changes":[],"usedIn":[]},{"id":"ENG-002","name":"Survey Response Rate","domain":"Employee Engagement","owner":"Priya Sharma","ownerPrefix":"ENG","status":"Active","tier":"Team","def":"% eligible who completed survey.","calc":"(Completed / Eligible) × 100","grain":"Survey, per cycle","related":["Employee Net Promoter Score (eNPS)"],"slideLink":"","desc":"Data quality metric for engagement surveys.","notes":"","contextText":"","contextLink":"","tables":[],"sql":"","sqlVer":"","changes":[],"usedIn":[]},{"id":"TAA-005","name":"90-Day New Hire Retention","domain":"Talent Acquisition","owner":"James Kim","ownerPrefix":"TAA","status":"Active","tier":"Executive","def":"% new hires still employed at 90d.","calc":"(Active @ 90d / Cohort) × 100","grain":"Cohort, monthly","related":["Voluntary Attrition Rate","Time to Fill","Cost Per Hire"],"slideLink":"","desc":"Quality of hire signal.","notes":"","contextText":"","contextLink":"","tables":[],"sql":"","sqlVer":"","changes":[],"usedIn":[{"name":"Retention Deep Dive","type":"Tableau","poc":"Sarah Chen","desc":"Interactive analysis of attrition drivers, trends, and cohort retention rates."},{"name":"Executive TA Review","type":"PowerPoint","poc":"James Kim","desc":"Monthly talent acquisition performance review for CHRO, VP TA, and Hiring Committee."}]},{"id":"TR-001","name":"Compensation Ratio (Compa-Ratio)","domain":"Total Rewards","owner":"David Rodriguez","ownerPrefix":"TR","status":"Active","tier":"Executive","def":"Base / band midpoint.","calc":"AVG(base / midpoint) × 100","grain":"Employee, point-in-time","related":["Gender Pay Equity Ratio","Diversity Representation"],"slideLink":"","desc":"Pay positioning relative to market.","notes":"","contextText":"","contextLink":"","tables":[],"sql":"","sqlVer":"","changes":[],"usedIn":[{"name":"CHRO Monthly Report","type":"PowerPoint","poc":"Sarah Chen","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership."},{"name":"Compensation Equity","type":"Tableau","poc":"David Rodriguez","desc":"Pay positioning and equity analysis for the Compensation team."}]},{"id":"DEI-001","name":"Gender Pay Equity Ratio","domain":"DEI","owner":"Amara Okafor","ownerPrefix":"DEI","status":"Active","tier":"Executive","def":"Median comp ratio W/M by level+function.","calc":"MEDIAN(F comp) / MEDIAN(M comp)","grain":"Level×function, point-in-time","related":["Compensation Ratio (Compa-Ratio)","Diversity Representation"],"slideLink":"https://tableau.company.com/views/board-dei","desc":"Tracks progress toward pay parity.","notes":"","contextText":"Parity target: 0.98-1.02 ratio range considered at parity; Controlled for: Level, function, tenure, geography; URM: Per EEOC categories; Reviewed quarterly by Compensation Committee with remediation budget","contextLink":"https://docs.google.com/presentation/d/example/edit#slide=id.pay-equity-method","tables":["HR.CORE.DIM_EMPLOYEES","HR.COMP.FACT_COMPENSATION"],"sql":"https://github.com/your-org/metrics-sql/blob/main/sql/DEI-001_gender_pay_equity.sql","sqlVer":"v1","changes":[],"usedIn":[{"name":"Board People Dashboard","type":"Tableau","poc":"Sarah Chen","desc":"Monthly board-level view of workforce health. Covers headcount trends, attrition rates, engagement scores, and diversity metrics."},{"name":"Board DEI Dashboard","type":"Tableau","poc":"Amara Okafor","desc":"Quarterly DEI dashboard for Board and DEI Committee. Tracks representation, pay equity, and promotion rates."},{"name":"CHRO Monthly Report","type":"PowerPoint","poc":"Sarah Chen","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership."},{"name":"QBR People Section","type":"PowerPoint","poc":"Sarah Chen","desc":"Quarterly business review people section for C-suite and BU heads."},{"name":"Compensation Equity","type":"Tableau","poc":"David Rodriguez","desc":"Pay positioning and equity analysis for the Compensation team."},{"name":"Annual DEI Report","type":"PDF","poc":"Amara Okafor","desc":"Public-facing annual report on DEI progress for all employees and external stakeholders."}]},{"id":"DEI-002","name":"Diversity Representation","domain":"DEI","owner":"Amara Okafor","ownerPrefix":"DEI","status":"Active","tier":"Executive","def":"% URM by level tier.","calc":"(URM / Total) × 100","grain":"Employee, by level","related":["Gender Pay Equity Ratio"],"slideLink":"https://tableau.company.com/views/board-dei","desc":"Core diversity metric by organizational level.","notes":"","contextText":"URM: Per EEOC — Black, Hispanic, Native American, Pacific Islander; Level tiers: IC (L1-L4), Manager (L5-L6), Director+ (L7+); Board target: 40% URM at Director+ by FY27","contextLink":"https://docs.google.com/presentation/d/example/edit#slide=id.dei-framework","tables":["HR.CORE.DIM_EMPLOYEES"],"sql":"https://github.com/your-org/metrics-sql/blob/main/sql/DEI-002_diversity_rep.sql","sqlVer":"v1","changes":[],"usedIn":[{"name":"Board People Dashboard","type":"Tableau","poc":"Sarah Chen","desc":"Monthly board-level view of workforce health. Covers headcount trends, attrition rates, engagement scores, and diversity metrics."},{"name":"Board DEI Dashboard","type":"Tableau","poc":"Amara Okafor","desc":"Quarterly DEI dashboard for Board and DEI Committee. Tracks representation, pay equity, and promotion rates."},{"name":"CHRO Monthly Report","type":"PowerPoint","poc":"Sarah Chen","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership."},{"name":"QBR People Section","type":"PowerPoint","poc":"Sarah Chen","desc":"Quarterly business review people section for C-suite and BU heads."},{"name":"DEI Scorecard","type":"Looker","poc":"Amara Okafor","desc":"Quarterly DEI scorecard for DEI team, HRBPs, and HR Leadership."},{"name":"Annual DEI Report","type":"PDF","poc":"Amara Okafor","desc":"Public-facing annual report on DEI progress for all employees and external stakeholders."}]},{"id":"PSA-007","name":"Internal Mobility Rate","domain":"Career Development","owner":"Sarah Chen","ownerPrefix":"PSA","status":"Active","tier":"Executive","def":"% positions filled internally.","calc":"(Internal / Total fills) × 100","grain":"Requisition, period","related":["Time to Fill","Promotion Rate"],"slideLink":"","desc":"Internal talent pipeline health indicator.","notes":"","contextText":"","contextLink":"","tables":[],"sql":"","sqlVer":"","changes":[],"usedIn":[{"name":"Executive TA Review","type":"PowerPoint","poc":"James Kim","desc":"Monthly talent acquisition performance review for CHRO, VP TA, and Hiring Committee."},{"name":"DEI Scorecard","type":"Looker","poc":"Amara Okafor","desc":"Quarterly DEI scorecard for DEI team, HRBPs, and HR Leadership."},{"name":"Annual DEI Report","type":"PDF","poc":"Amara Okafor","desc":"Public-facing annual report on DEI progress for all employees and external stakeholders."}]},{"id":"PSA-008","name":"Promotion Rate","domain":"Career Development","owner":"Sarah Chen","ownerPrefix":"PSA","status":"Active","tier":"Executive","def":"% promoted (level increase), annualized.","calc":"(Promoted / Avg HC) × (12/mo) × 100","grain":"Employee, period","related":["Internal Mobility Rate","Diversity Representation"],"slideLink":"","desc":"Career progression rate.","notes":"","contextText":"","contextLink":"","tables":[],"sql":"","sqlVer":"","changes":[],"usedIn":[{"name":"Board DEI Dashboard","type":"Tableau","poc":"Amara Okafor","desc":"Quarterly DEI dashboard for Board and DEI Committee. Tracks representation, pay equity, and promotion rates."},{"name":"DEI Scorecard","type":"Looker","poc":"Amara Okafor","desc":"Quarterly DEI scorecard for DEI team, HRBPs, and HR Leadership."},{"name":"Annual DEI Report","type":"PDF","poc":"Amara Okafor","desc":"Public-facing annual report on DEI progress for all employees and external stakeholders."}]},{"id":"LD-001","name":"Training Hours per Employee","domain":"Learning & Development","owner":"Lisa Park","ownerPrefix":"LD","status":"New Metric","tier":"Team","def":"Avg formal training hours.","calc":"SUM(hours) / COUNT(active)","grain":"Employee, period","related":["Employee Net Promoter Score (eNPS)"],"slideLink":"","desc":"L&D investment per employee.","notes":"Pending committee review","contextText":"","contextLink":"","tables":[],"sql":"","sqlVer":"","changes":[],"usedIn":[]},{"id":"BEN-001","name":"Benefits Utilization Rate","domain":"Total Rewards","owner":"David Rodriguez","ownerPrefix":"BEN","status":"New Metric","tier":"Team","def":"% eligible in ≥1 voluntary benefit.","calc":"(Enrolled / Eligible) × 100","grain":"Employee, point-in-time","related":["Compensation Ratio (Compa-Ratio)"],"slideLink":"","desc":"Benefits program adoption rate.","notes":"Pending committee review","contextText":"","contextLink":"","tables":[],"sql":"","sqlVer":"","changes":[],"usedIn":[]}],"PRODUCTS":[{"id":"PRD-001","name":"Board People Dashboard","type":"Tableau","desc":"Monthly board-level view of workforce health. Covers headcount trends, attrition rates, engagement scores, and diversity metrics.","freq":"Monthly","months":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"audience":"Board, CHRO","tier":"Executive","metrics":["Total Headcount","Voluntary Attrition Rate","Total Attrition Rate","Employee Net Promoter Score (eNPS)","Gender Pay Equity Ratio","Diversity Representation"],"link":"https://tableau.company.com/views/board-people","poc":"Sarah Chen","team":"PSA","severity":"High","status":"Active","notes":"3rd business day","tables":[]},{"id":"PRD-002","name":"Board DEI Dashboard","type":"Tableau","desc":"Quarterly DEI dashboard for Board and DEI Committee. Tracks representation, pay equity, and promotion rates.","freq":"Quarterly","months":["Mar","Jun","Sep","Dec"],"audience":"Board, CHRO, DEI Committee","tier":"Executive","metrics":["Gender Pay Equity Ratio","Diversity Representation","Promotion Rate"],"link":"https://tableau.company.com/views/board-dei","poc":"Amara Okafor","team":"DEI","severity":"High","status":"Active","notes":"Q+10 business days","tables":[]},{"id":"PRD-003","name":"Retention Deep Dive","type":"Tableau","desc":"Interactive analysis of attrition drivers, trends, and cohort retention rates.","freq":"Monthly","months":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"audience":"PSA, HRBPs","tier":"Team","metrics":["Voluntary Attrition Rate","Involuntary Attrition Rate","Total Attrition Rate","90-Day New Hire Retention"],"link":"https://tableau.company.com/views/retention","poc":"Sarah Chen","team":"PSA","severity":"High","status":"Active","notes":"","tables":[]},{"id":"PRD-004","name":"TA Operations Dashboard","type":"Tableau","desc":"Real-time recruiting pipeline and performance metrics for the TA team.","freq":"Monthly","months":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"audience":"TA Team, Recruiters","tier":"Team","metrics":["Time to Fill","Time to Start","Cost Per Hire","Offer Acceptance Rate"],"link":"https://tableau.company.com/views/ta-ops","poc":"James Kim","team":"TA Analytics","severity":"High","status":"Active","notes":"Every Monday refresh","tables":[]},{"id":"PRD-005","name":"Recruiter Scorecard","type":"Looker","desc":"Individual recruiter performance metrics and pipeline health.","freq":"Monthly","months":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"audience":"TA Analytics","tier":"Team","metrics":["Time to Fill","Offer Acceptance Rate"],"link":"https://looker.company.com/dashboards/recruiter","poc":"James Kim","team":"TA Analytics","severity":"High","status":"Active","notes":"","tables":[]},{"id":"PRD-006","name":"Manager Self-Service","type":"Looker","desc":"Self-service people data for 200+ people managers.","freq":"Monthly","months":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"audience":"People Managers (200+)","tier":"Team","metrics":["Total Headcount","Voluntary Attrition Rate","Span of Control"],"link":"https://looker.company.com/dashboards/mgr","poc":"Raj Patel","team":"HRBPs","severity":"Medium","status":"Active","notes":"Continuous refresh","tables":[]},{"id":"PRD-007","name":"HRBP Dashboard","type":"Looker","desc":"HC, attrition, and org structure for business partners.","freq":"Monthly","months":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"audience":"HRBPs","tier":"Team","metrics":["Total Headcount","Voluntary Attrition Rate","Total Attrition Rate","Span of Control"],"link":"https://looker.company.com/dashboards/hrbp","poc":"Raj Patel","team":"HRBPs","severity":"Medium","status":"Active","notes":"","tables":[]},{"id":"PRD-008","name":"CHRO Monthly Report","type":"PowerPoint","desc":"Comprehensive monthly executive summary of all people metrics for CHRO and VP-level HR leadership.","freq":"Monthly","months":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"audience":"CHRO, VP HR, HR Leadership","tier":"Executive","metrics":["Total Headcount","Voluntary Attrition Rate","Involuntary Attrition Rate","Total Attrition Rate","Time to Fill","Cost Per Hire","Employee Net Promoter Score (eNPS)","Compensation Ratio (Compa-Ratio)","Gender Pay Equity Ratio","Diversity Representation"],"link":"","poc":"Sarah Chen","team":"PSA","severity":"High","status":"Active","notes":"5th business day","tables":[]},{"id":"PRD-009","name":"Executive TA Review","type":"PowerPoint","desc":"Monthly talent acquisition performance review for CHRO, VP TA, and Hiring Committee.","freq":"Monthly","months":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"audience":"CHRO, VP TA, Hiring Committee","tier":"Executive","metrics":["Time to Fill","Time to Start","Cost Per Hire","Offer Acceptance Rate","90-Day New Hire Retention","Internal Mobility Rate"],"link":"","poc":"James Kim","team":"TA Analytics","severity":"High","status":"Active","notes":"7th business day","tables":[]},{"id":"PRD-010","name":"QBR People Section","type":"PowerPoint","desc":"Quarterly business review people section for C-suite and BU heads.","freq":"Quarterly","months":["Jan","Apr","Jul","Oct"],"audience":"CEO, CFO, CHRO, BU Heads","tier":"Executive","metrics":["Total Headcount","Voluntary Attrition Rate","Total Attrition Rate","Cost Per Hire","Employee Net Promoter Score (eNPS)","Gender Pay Equity Ratio","Diversity Representation"],"link":"","poc":"Sarah Chen","team":"PSA","severity":"High","status":"Active","notes":"Q+15 business days","tables":[]},{"id":"PRD-011","name":"Compensation Equity","type":"Tableau","desc":"Pay positioning and equity analysis for the Compensation team.","freq":"Semi-annually","months":["Jan","Dec"],"audience":"Comp Team","tier":"Team","metrics":["Compensation Ratio (Compa-Ratio)","Gender Pay Equity Ratio"],"link":"https://tableau.company.com/views/comp-equity","poc":"David Rodriguez","team":"Total Rewards","severity":"High","status":"Active","notes":"","tables":[]},{"id":"PRD-012","name":"DEI Scorecard","type":"Looker","desc":"Quarterly DEI scorecard for DEI team, HRBPs, and HR Leadership.","freq":"Quarterly","months":["Mar","Jun","Sep","Dec"],"audience":"DEI, HRBPs, HR Leadership","tier":"Team","metrics":["Diversity Representation","Internal Mobility Rate","Promotion Rate"],"link":"https://looker.company.com/dashboards/dei","poc":"Amara Okafor","team":"DEI","severity":"Medium","status":"Active","notes":"Q+5 business days","tables":[]},{"id":"PRD-013","name":"Annual DEI Report","type":"PDF","desc":"Public-facing annual report on DEI progress for all employees and external stakeholders.","freq":"Weekly","months":[],"audience":"All Employees (public)","tier":"Executive","metrics":["Gender Pay Equity Ratio","Diversity Representation","Internal Mobility Rate","Promotion Rate"],"link":"","poc":"Amara Okafor","team":"DEI","severity":"High","status":"Active","notes":"Every Monday","tables":[]},{"id":"PRD-014","name":"Finance HC Package","type":"Excel","desc":"Monthly headcount and cost data for FP&A and Controller.","freq":"Bi-weekly","months":[],"audience":"FP&A, Controller","tier":"Team","metrics":["Total Headcount","Cost Per Hire"],"link":"","poc":"Sarah Chen","team":"Finance","severity":"Medium","status":"Active","notes":"Every Friday","tables":[]}],"TABLES":[{"id":"T-001","name":"HR.CORE.DIM_EMPLOYEES","desc":"Master employee dimension (SCD2).","grain":"Per employee","pk":"employee_id+effective_date","whenUse":"HC, demographics, org, joins to facts","whenNot":"NOT separations, NOT comp, NOT recruiting","refresh":"Daily","owner":"HR Data Eng","latency":"T+1","rows":"~45K","cols":"employee_id, status, hire_date, level, function, dept, manager_id, gender, urm"},{"id":"T-002","name":"HR.CORE.FACT_SEPARATIONS","desc":"All separations with reasons.","grain":"Per separation","pk":"separation_id","whenUse":"Attrition, exit reasons, regrettable loss","whenNot":"NOT current employees, NOT headcount","refresh":"Daily","owner":"HR Data Eng","latency":"T+5","rows":"~8K","cols":"employee_id, sep_date, sep_type, reason_code"},{"id":"T-003","name":"HR.CORE.FACT_DAILY_HEADCOUNT","desc":"Pre-aggregated daily HC.","grain":"Per date","pk":"snapshot_date","whenUse":"Avg HC for denominators, trends, YoY","whenNot":"NOT employee-level analysis","refresh":"Daily","owner":"HR Data Eng","latency":"T+1","rows":"~2K","cols":"snapshot_date, total_hc, fte, pte"},{"id":"T-004","name":"HR.TA.FACT_REQUISITIONS","desc":"Req lifecycle dates.","grain":"Per requisition","pk":"requisition_id","whenUse":"TTF, TTS, fill rates, workload","whenNot":"NOT costs, NOT pipeline","refresh":"Weekly","owner":"TA Data Eng","latency":"T+1","rows":"~12K","cols":"req_id, approved_date, offer_date, start_date, status"},{"id":"T-005","name":"HR.TA.FACT_RECRUITING_COSTS","desc":"Cost line items.","grain":"Per cost item","pk":"cost_id","whenUse":"Cost-per-hire, budget, agency spend","whenNot":"NOT req lifecycle, NOT candidates","refresh":"Monthly","owner":"TA Data Eng","latency":"T+15","rows":"~25K","cols":"req_id, cost_type, category, amount_usd"},{"id":"T-006","name":"HR.ENGAGEMENT.FACT_SURVEY","desc":"Survey responses (anonymized).","grain":"Per question per respondent","pk":"response_id","whenUse":"eNPS, engagement, response rates","whenNot":"NOT pulse surveys. NEVER de-anonymize.","refresh":"Per cycle","owner":"People Analytics","latency":"T+10","rows":"~150K/cycle","cols":"survey_id, anon_id, question, score, dept, level"},{"id":"T-007","name":"HR.COMP.FACT_COMPENSATION","desc":"Comp records (SCD2).","grain":"Per employee per event","pk":"comp_record_id","whenUse":"Compa-ratio, pay equity, band reviews","whenNot":"NOT headcount, NOT recruiting costs","refresh":"Monthly","owner":"Comp Data Eng","latency":"T+1","rows":"~60K","cols":"employee_id, base, bonus_pct, equity, total_comp, midpoint"}]};
 const METRICS = SITE_DATA.METRICS || [];
 const PRODUCTS = SITE_DATA.PRODUCTS || [];
+const TABLES = SITE_DATA.TABLES || [];
 
 const ALL_MONTHS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const CUR_MO=new Date().getMonth();
 const typeColor={Tableau:"#E04D01",Looker:"#1A73E8",PowerPoint:"#C43E1C",Excel:"#217346",PDF:"#B7222F",Other:"#6B7280"};
+const statusColors={Active:{bg:"var(--green-bg)",fg:"var(--green-fg)"},"Change Proposed":{bg:"var(--amber-bg)",fg:"var(--amber-fg)"},"Change Approved":{bg:"var(--blue-bg)",fg:"var(--blue-fg)"},"New Metric":{bg:"#E0E7FF",fg:"#3730A3"},"Metric Deprecated":{bg:"var(--red-bg)",fg:"var(--red-fg)"}};
 
 function esc(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
 function nextDel(months){if(!months||!months.length)return"—";const idxs=months.map(m=>ALL_MONTHS.indexOf(m)).filter(i=>i>=0).sort((a,b)=>a-b);for(const i of idxs){if(i>=CUR_MO)return ALL_MONTHS[i]}return ALL_MONTHS[idxs[0]]}
 function freqLabel(months){if(!months||!months.length)return"Other";const n=months.length;if(n>=12)return"Monthly";if(n===4)return"Quarterly";if(n===2)return"Semi-annually";if(n===1)return"Annually";return n+"x/year"}
+function statusBadge(s){const c=statusColors[s]||{bg:"#F3F4F6",fg:"var(--t2)"};return`<span class="badge" style="background:${c.bg};color:${c.fg}">${esc(s)}</span>`}
+function tierBadge(t){return`<span class="badge ${t==="Executive"?"badge-exec":"badge-team"}">${esc(t)}</span>`}
 
 let currentPage="metrics",selectedIdx=null;
 
 function renderNav(){
   const items=[
     {key:"metrics",icon:"◈",label:"Metrics",ct:METRICS.length},
-    {key:"calendar",icon:"◫",label:"Calendar",ct:PRODUCTS.length}
+    {key:"calendar",icon:"◫",label:"Calendar",ct:PRODUCTS.length},
+    {key:"tables",icon:"⊞",label:"Tables",ct:TABLES.length}
   ];
   document.getElementById("nav").innerHTML=items.map(n=>`
     <div class="nav-item ${currentPage===n.key?"active":""}" onclick="goPage('${n.key}')">
       <span class="nav-icon">${n.icon}</span>${n.label}<span class="nav-ct">${n.ct}</span>
     </div>`).join("");
 }
-
 function goPage(p){currentPage=p;selectedIdx=null;renderNav();renderMain()}
 
 // ══════════════════════════════════════════════
-// METRICS PAGE — Executive (no status filter)
+// METRICS PAGE — Analyst (full detail, all statuses)
 // ══════════════════════════════════════════════
-let mSearch="",mDomain="";
+let mSearch="",mDomain="",mTier="",mStatus="";
 
 function renderMetricsPage(){
   const domains=[...new Set(METRICS.map(m=>m.domain))].sort();
+  const statuses=[...new Set(METRICS.map(m=>m.status))].sort();
   document.getElementById("main").innerHTML=`
   <div class="filter-bar">
     <div class="search-wrap ${mSearch?'has-val':''}" id="mSearchWrap"><span class="search-icon">⌕</span><input value="${esc(mSearch)}" placeholder="Search metrics..." oninput="mSearch=this.value;document.getElementById('mSearchWrap').className='search-wrap '+(mSearch?'has-val':'');renderMetricsList()"><button class="clear-btn" onclick="mSearch='';renderMetricsPage()">✕</button></div>
     <select onchange="mDomain=this.value;renderMetricsList()"><option value="">All Domains</option>${domains.map(d=>`<option${mDomain===d?" selected":""}>${esc(d)}</option>`).join("")}</select>
-    <span style="margin-left:auto;font-size:11px;color:var(--t4)">Executive tier only</span>
+    <select onchange="mTier=this.value;renderMetricsList()"><option value="">All Tiers</option><option${mTier==="Executive"?" selected":""}>Executive</option><option${mTier==="Team"?" selected":""}>Team</option></select>
+    <select onchange="mStatus=this.value;renderMetricsList()"><option value="">All Statuses</option>${statuses.map(s=>`<option${mStatus===s?" selected":""}>${esc(s)}</option>`).join("")}</select>
   </div>
   <div class="two-panel">
     <div class="metric-list" id="metricList"></div>
     <div class="detail-panel" id="detailPanel">
-      <div class="detail-empty"><span class="icon">◈</span><p>Select a metric to see details</p></div>
+      <div class="detail-empty"><span style="font-size:32px;opacity:.3">◈</span><p style="font-size:13px">Select a metric to see details</p></div>
     </div>
   </div>`;
   renderMetricsList();
@@ -223,14 +241,18 @@ function renderMetricsList(){
   let filtered=METRICS.filter(m=>{
     if(mSearch&&!m.name.toLowerCase().includes(mSearch.toLowerCase()))return false;
     if(mDomain&&m.domain!==mDomain)return false;
+    if(mTier&&m.tier!==mTier)return false;
+    if(mStatus&&m.status!==mStatus)return false;
     return true;
   });
-  document.getElementById("metricList").innerHTML=`<div class="list-header">${filtered.length} metrics</div>`+filtered.map((m,i)=>`
-    <div class="list-item ${selectedIdx===i?"active":""}" onclick="selectedIdx=${i};renderMetricsList();renderDetail()">
+  document.getElementById("metricList").innerHTML=`<div class="list-header">${filtered.length} metrics</div>`+filtered.map((m,i)=>{
+    const origIdx=METRICS.indexOf(m);
+    return`<div class="list-item ${selectedIdx===origIdx?"active":""}" onclick="selectedIdx=${origIdx};renderMetricsList();renderDetail()">
+      <div class="mid">${esc(m.id)}</div>
       <h3>${esc(m.name)}</h3>
-      <p>${esc(m.def.substring(0,80))}…</p>
-      <span class="domain-tag">${esc(m.domain)}</span>
-    </div>`).join("");
+      <p>${esc(m.domain)} · ${esc(m.owner)}</p>
+      <div class="badges-row">${tierBadge(m.tier)}${statusBadge(m.status)}</div>
+    </div>`}).join("");
   if(selectedIdx!==null)renderDetail();
 }
 
@@ -239,6 +261,8 @@ function toggleChips(btn){var w=btn.parentElement;if(w.classList.contains("is-co
 function renderDetail(){
   const m=METRICS[selectedIdx];if(!m)return;
   const panel=document.getElementById("detailPanel");
+  const sc=statusColors[m.status]||{bg:"#F3F4F6",fg:"#374151"};
+  const statusDot=sc.fg;
 
   let slideHtml="";
   if(m.slideLink){
@@ -278,55 +302,46 @@ function renderDetail(){
 
   panel.innerHTML=`<div class="fade-in">
     <div class="detail-head">
+      <div class="mid">${esc(m.id)}</div>
       <h2>${esc(m.name)}</h2>
-      <div class="badges">
-        <span class="badge badge-exec">Executive</span>
-        <span class="badge badge-domain">${esc(m.domain)}</span>
-      </div>
+      <div class="badges">${tierBadge(m.tier)}${statusBadge(m.status)}<span class="badge badge-domain">${esc(m.domain)}</span></div>
     </div>
 
-    <div class="def-block">
-      <div class="label">Definition</div>
-      ${esc(m.def)}
-    </div>
+    <div class="def-block"><div class="label">Definition</div>${esc(m.def)}</div>
 
     ${contextHtml}
 
-    <div class="owner-block">
-      <div class="owner-avatar">${esc(m.ownerPrefix)}</div>
-      <div class="owner-info">
-        <div class="name">${esc(m.owner)}</div>
-        <div class="role">Metric Owner</div>
-      </div>
+    ${m.calc?`<div class="calc-block"><div class="label">Calculation</div>${esc(m.calc)}</div>`:""}
+
+    <div class="info-grid">
+      <div class="info-card"><div class="label">Grain</div><div class="value">${esc(m.grain)}</div></div>
+      <div class="info-card"><div class="label">Owner</div><div class="value">${esc(m.owner)}</div></div>
+      <div class="info-card"><div class="label">Team</div><div class="value">${esc(m.ownerPrefix)}</div></div>
     </div>
 
     ${slideHtml}
 
-    <div class="sec">
-      <div class="sec-title">Related Metrics</div>
-      <div>${m.related.map(r=>`<span class="related-chip" onclick="goToMetric('${esc(r).replace(/'/g,"\\'")}')">${esc(r)}</span>`).join("")}</div>
+    ${m.tables.length?`<div class="sec"><div class="sec-title">Source Tables</div><div>${m.tables.map(t=>`<span class="table-chip">${esc(t)}</span>`).join("")}</div></div>`:""}
+
+    ${m.sql?`<div class="sec"><div class="sec-title">SQL Definition</div><div class="sql-block"><a href="${esc(m.sql)}" target="_blank">${esc(m.id.replace(/-/g,"_").toLowerCase())}.sql →</a> <span style="font-size:11px;color:var(--t4)">(${esc(m.sqlVer)})</span></div></div>`:""}
+
+    <div class="sec"><div class="sec-title">Related Metrics</div><div>${m.related.map(r=>`<span class="related-chip" onclick="goToMetric('${esc(r).replace(/'/g,"\\'")}')">${esc(r)}</span>`).join("")}</div></div>
+
+    <div class="sec"><div class="sec-title">Used In</div>
+      ${(m.usedIn||[]).map(p=>`<div class="used-in-card" onclick="goToProduct('${esc(p.name).replace(/'/g,"\\'")}')">
+        <div><div class="name">${esc(p.name)}</div><div class="meta">${esc(p.desc)} · POC: ${esc(p.poc)}</div></div>
+        <span class="badge badge-sm" style="background:${typeColor[p.type]||"#6B7280"}20;color:${typeColor[p.type]||"#6B7280"}">${esc(p.type)}</span>
+      </div>`).join("")||'<span style="font-size:12px;color:var(--t4)">No downstream products yet</span>'}
     </div>
 
-    <div class="sec">
-      <div class="sec-title">Used In</div>
-      ${(m.usedIn||[]).map(p=>`
-        <div class="used-in-card" onclick="goToProduct('${esc(p.name).replace(/'/g,"\\'")}')">
-          <div>
-            <div class="name">${esc(p.name)}</div>
-            <div class="meta">${esc(p.desc)}</div>
-          </div>
-          <div>
-            <span class="type-badge" style="background:${typeColor[p.type]||"#6B7280"}20;color:${typeColor[p.type]||"#6B7280"}">${esc(p.type)}</span>
-          </div>
-        </div>`).join("")}
-    </div>
+    ${m.notes?`<div class="sec"><div class="sec-title">Notes</div><div style="font-size:13px;color:var(--t3);background:var(--bg);padding:10px 14px;border-radius:8px">${esc(m.notes)}</div></div>`:""}
   </div>`;
 }
 
 // ══════════════════════════════════════════════
-// CALENDAR PAGE — Team-level POC, descriptions
+// CALENDAR PAGE — Individual POC, descriptions, source tables
 // ══════════════════════════════════════════════
-let cSearch="",cType="",cTeam="",cFreq="";
+let cSearch="",cType="",cTeam="",cTier="",cFreq="";
 
 function renderCalendarPage(){
   const types=[...new Set(PRODUCTS.map(p=>p.type))].sort();
@@ -334,9 +349,10 @@ function renderCalendarPage(){
   const freqs=[...new Set(PRODUCTS.map(p=>p.freq))].filter(Boolean).sort();
   document.getElementById("main").innerHTML=`
   <div class="filter-bar">
-    <div class="search-wrap ${cSearch?'has-val':''}" id="cSearchWrap"><span class="search-icon">⌕</span><input value="${esc(cSearch)}" placeholder="Search products..." oninput="cSearch=this.value;document.getElementById('cSearchWrap').className='search-wrap '+(cSearch?'has-val':'');renderCalContent()"><button class="clear-btn" onclick="cSearch='';renderCalendarPage()">✕</button></div>
+    <div class="search-wrap ${cSearch?'has-val':''}" id="cSearchWrap"><span class="search-icon">⌕</span><input value="${esc(cSearch)}" placeholder="Search products, POC..." oninput="cSearch=this.value;document.getElementById('cSearchWrap').className='search-wrap '+(cSearch?'has-val':'');renderCalContent()"><button class="clear-btn" onclick="cSearch='';renderCalendarPage()">✕</button></div>
     <select onchange="cType=this.value;renderCalContent()"><option value="">All Types</option>${types.map(t=>`<option${cType===t?" selected":""}>${esc(t)}</option>`).join("")}</select>
     <select onchange="cTeam=this.value;renderCalContent()"><option value="">All Teams</option>${teams.map(t=>`<option${cTeam===t?" selected":""}>${esc(t)}</option>`).join("")}</select>
+    <select onchange="cTier=this.value;renderCalContent()"><option value="">All Tiers</option><option${cTier==="Executive"?" selected":""}>Executive</option><option${cTier==="Team"?" selected":""}>Team</option></select>
     <select onchange="cFreq=this.value;renderCalContent()"><option value="">All Frequencies</option>${freqs.map(f=>`<option${cFreq===f?" selected":""}>${esc(f)}</option>`).join("")}</select>
   </div>
   <div class="calendar-scroll" id="calContent"></div>`;
@@ -345,9 +361,10 @@ function renderCalendarPage(){
 
 function filterProds(list){
   return list.filter(p=>{
-    if(cSearch&&!(p.name+p.team+p.desc).toLowerCase().includes(cSearch.toLowerCase()))return false;
+    if(cSearch&&!(p.name+p.poc+p.team+p.desc).toLowerCase().includes(cSearch.toLowerCase()))return false;
     if(cType&&p.type!==cType)return false;
     if(cTeam&&p.team!==cTeam)return false;
+    if(cTier&&p.tier!==cTier)return false;
     if(cFreq&&p.freq!==cFreq)return false;
     return true;
   });
@@ -370,16 +387,19 @@ function renderCalContent(){
   else{
     h+=`<div class="cal-grid" style="margin-bottom:32px">`;
     dashboards.forEach(p=>{
+      const tbls=p.tables||[];
       h+=`<div class="cal-card dash">
         <div style="display:flex;justify-content:space-between;align-items:flex-start">
           <h4>${esc(p.name)}</h4>
-          <span class="badge" style="background:${typeColor[p.type]||"#6B7280"}20;color:${typeColor[p.type]||"#6B7280"}">${esc(p.type)}</span>
+          <div style="display:flex;gap:4px">${tierBadge(p.tier)}<span class="badge" style="background:${typeColor[p.type]||"#6B7280"}20;color:${typeColor[p.type]||"#6B7280"}">${esc(p.type)}</span></div>
         </div>
         <div class="desc">${esc(p.desc)}</div>
         <div class="cal-poc">
+          <span><strong>POC</strong> ${esc(p.poc)}</span>
           <span><strong>Team</strong> ${esc(p.team)}</span>
           ${p.link?`<a href="${esc(p.link)}" target="_blank" style="margin-left:auto;color:var(--teal);font-weight:600;font-size:11px;text-decoration:none">Open →</a>`:""}
         </div>
+        ${tbls.length?`<details style="margin-bottom:8px"><summary style="font-size:11px;color:var(--t3);font-weight:600;cursor:pointer">Source tables (${tbls.length})</summary><div style="display:flex;gap:3px;flex-wrap:wrap;margin-top:4px">${tbls.map(t=>`<span class="src-chip">${esc(t.split(".").pop())}</span>`).join("")}</div></details>`:""}
         <div class="chips-collapse${(p.metrics||[]).length>4?' is-collapsed':''}">${(p.metrics||[]).map(mn=>`<span class="metric-chip teal" onclick="goToMetric('${esc(mn).replace(/'/g,"\\'")}');event.stopPropagation()">${esc(mn)}</span>`).join("")}${(p.metrics||[]).length>4?`<span class="chips-toggle" onclick="toggleChips(this);event.stopPropagation()">+${(p.metrics||[]).length-4} more</span>`:""}</div>
       </div>`;
     });
@@ -403,20 +423,23 @@ function renderCalContent(){
     h+=`<div class="freq-group"><div class="freq-header"><span class="icon">${freqIcons[fg]||"◇"}</span><h3>${esc(fg)}</h3><span>(${group.length})</span></div><div class="cal-grid">`;
     group.forEach(p=>{
       const nx=nextDel(p.months);
+      const tbls=p.tables||[];
       h+=`<div class="cal-card anal">
         <div style="display:flex;justify-content:space-between;align-items:flex-start">
           <h4>${esc(p.name)}</h4>
-          <span class="badge" style="background:${typeColor[p.type]||"#6B7280"}20;color:${typeColor[p.type]||"#6B7280"}">${esc(p.type)}</span>
+          <div style="display:flex;gap:4px">${tierBadge(p.tier)}<span class="badge" style="background:${typeColor[p.type]||"#6B7280"}20;color:${typeColor[p.type]||"#6B7280"}">${esc(p.type)}</span></div>
         </div>
         <div class="desc">${esc(p.desc)}</div>
         <div class="cal-poc">
+          <span><strong>POC</strong> ${esc(p.poc)}</span>
           <span><strong>Team</strong> ${esc(p.team)}</span>
           ${p.link?`<a href="${esc(p.link)}" target="_blank" style="margin-left:auto;color:var(--gold);font-weight:600;font-size:11px;text-decoration:none">Open →</a>`:""}
         </div>
         ${isMonthBased&&(p.months||[]).length?`<div style="margin-bottom:10px">${ALL_MONTHS.map(mo=>{const active=(p.months||[]).includes(mo);const isNx=mo===nx;return '<span class="month-pill '+(isNx?'next':active?'active':'inactive')+'">'+mo+'</span>'}).join("")}</div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
           <span class="next-delivery">Next → ${nx}</span>
         </div>`:`<div style="margin-bottom:10px"><span class="cadence-tag">${esc(p.notes||p.freq)}</span></div>`}
+        ${tbls.length?`<details style="margin-bottom:8px"><summary style="font-size:11px;color:var(--t3);font-weight:600;cursor:pointer">Source tables (${tbls.length})</summary><div style="display:flex;gap:3px;flex-wrap:wrap;margin-top:4px">${tbls.map(t=>`<span class="src-chip">${esc(t.split(".").pop())}</span>`).join("")}</div></details>`:""}
         <div class="chips-collapse${(p.metrics||[]).length>4?' is-collapsed':''}">${(p.metrics||[]).map(mn=>`<span class="metric-chip gold" onclick="goToMetric('${esc(mn).replace(/'/g,"\\'")}');event.stopPropagation()">${esc(mn)}</span>`).join("")}${(p.metrics||[]).length>4?`<span class="chips-toggle" onclick="toggleChips(this);event.stopPropagation()">+${(p.metrics||[]).length-4} more</span>`:""}</div>
       </div>`;
     });
@@ -426,17 +449,47 @@ function renderCalContent(){
   document.getElementById("calContent").innerHTML=h;
 }
 
+// ══════════════════════════════════════════════
+// TABLES PAGE
+// ══════════════════════════════════════════════
+function renderTablesPage(){
+  let h=`<div class="table-page"><div class="section-head"><h2>Table Registry</h2><p>Snowflake source tables — when to use and what they contain</p></div>`;
+  TABLES.forEach(t=>{
+    const mc=METRICS.filter(m=>(m.tables||[]).includes(t.name)).length;
+    h+=`<div class="table-registry-card">
+      <h4>${esc(t.name)}</h4>
+      <div class="desc">${esc(t.desc)}</div>
+      <div class="grid">
+        <div class="mini"><div class="label">Grain</div>${esc(t.grain)}</div>
+        <div class="mini"><div class="label">Primary Key</div>${esc(t.pk)}</div>
+        <div class="mini"><div class="label">Refresh</div>${esc(t.refresh)}</div>
+        <div class="mini"><div class="label">Owner</div>${esc(t.owner)}</div>
+        <div class="mini"><div class="label">Est. Rows</div>${esc(t.rows)}</div>
+        <div class="mini"><div class="label">Used by</div>${mc} metric${mc!==1?"s":""}</div>
+      </div>
+      <div style="margin-top:10px;display:flex;gap:16px">
+        <div class="mini" style="flex:1"><div class="label">When to use</div><span style="color:var(--green-fg)">${esc(t.whenUse)}</span></div>
+        <div class="mini" style="flex:1"><div class="label">When NOT to use</div><span style="color:var(--red-fg)">${esc(t.whenNot)}</span></div>
+      </div>
+    </div>`;
+  });
+  h+=`</div>`;
+  document.getElementById("main").innerHTML=`<div class="calendar-scroll">${h}</div>`;
+}
+
 // ── CROSS-NAVIGATION ──
 function goToMetric(name){
-  currentPage="metrics";mSearch="";mDomain="";
+  currentPage="metrics";mSearch="";mDomain="";mTier="";mStatus="";
   renderNav();renderMetricsPage();
   var idx=METRICS.findIndex(function(m){return m.name===name});
   if(idx>=0){selectedIdx=idx;renderMetricsList();renderDetail();
-    var items=document.querySelectorAll(".list-item");
-    if(items[idx])items[idx].scrollIntoView({block:"center",behavior:"smooth"});}
+    setTimeout(function(){var items=document.querySelectorAll(".list-item");
+      if(items.length){for(var i=0;i<items.length;i++){
+        if(items[i].querySelector("h3")&&items[i].querySelector("h3").textContent===name){
+          items[i].scrollIntoView({block:"center",behavior:"smooth"});break;}}}},100);}
 }
 function goToProduct(name){
-  currentPage="calendar";cSearch="";cType="";cTeam="";cFreq="";
+  currentPage="calendar";cSearch="";cType="";cTeam="";cTier="";cFreq="";
   renderNav();renderCalendarPage();
   setTimeout(function(){
     var cards=document.querySelectorAll(".cal-card");
@@ -444,17 +497,17 @@ function goToProduct(name){
       if(cards[i].querySelector("h4")&&cards[i].querySelector("h4").textContent===name){
         cards[i].scrollIntoView({block:"center",behavior:"smooth"});
         cards[i].style.boxShadow="0 0 0 3px var(--teal)";
-        setTimeout(function(){cards[i].style.boxShadow=""},2000);
+        var card=cards[i];setTimeout(function(){card.style.boxShadow=""},2000);
         break;
       }
     }
   },100);
 }
 
-// ── INIT ──
 function renderMain(){
   if(currentPage==="metrics")renderMetricsPage();
   else if(currentPage==="calendar")renderCalendarPage();
+  else if(currentPage==="tables")renderTablesPage();
 }
 renderNav();renderMain();
 </script>
